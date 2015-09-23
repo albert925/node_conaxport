@@ -1,0 +1,87 @@
+doctype html
+html
+	head(lang="es")
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, maximun-scale=1")
+		meta(name="description" content="conaxport")
+		meta(name="keywords" content="Diseño, paginas, plataformas, web, economicas, baratas, cucuta")
+		title Conaxport
+		link(rel="icon" href="/images/icono.ico")
+		link(rel="image_src" href="/images/logo.png")
+		link(rel="stylesheet" href="/css/normalize.css")
+		link(rel="stylesheet" href="/css/iconos/style.css")
+		link(rel="stylesheet" href="/css/style.css")
+		link(rel="stylesheet" href="/css/default/default.css")
+		link(rel="stylesheet" href="/css/nivo_slider.css")
+		script(src="/js/jquery_2_1_1.js")
+		script(src="/js/scrpag.js")
+		script(src="/js/admin.js")
+	body
+		aside(id="redesb")
+			a(href="https://www.facebook.com/Conaxport" target="_blank") #[span(class="icon-facebook2")]
+			a(href="https://www.facebook.com/Conaxport" target="_blank") #[span(class="icon-instagram")]
+			a(href="https://www.facebook.com/Conaxport" target="_blank") #[span(class="icon-twitter2")]
+			a(href="https://www.facebook.com/Conaxport" target="_blank") #[span(class="icon-google-plus-square")]
+		header
+			figure(id="logo")
+				a(href="/")
+					img(src="/images/logo.png" alt="logo")
+			nav(id="mnP")
+				a(href="/" class="selA") Inicio
+				a(href="/conocenos") CONÓCENOS
+				a(href="/portafolio") PORTAFOLIO
+				a(href="/blog") BLOG
+				a(href="/cliente") CLIENTES
+				a(href="/contacto") CONTACTO
+		aside(id="botnmov")
+		nav(id="mnB")
+			a(href="/" class="selA") INICIO
+			a(href="/conocenos") CONÓCENOS
+			a(href="/portafolio") PORTAFOLIO
+			a(href="/blog") BLOG
+			a(href="/cliente") CLIENTES
+			a(href="/contacto") CONTACTO
+			a(href="/brochure" target="_blank") VER PORTAFOLIO
+		section
+			article(id="automargen")
+				h2(id="amar") Administrador
+				form(action="/conaxadm/adm" method="post" class="columninput")
+					label #[b usuario]
+					input(type="text" id="usadm" name="usadm" required="required")
+					label #[b Contraseña]
+					input(type="password" id="pasadm" name="pasadm" required="required")
+					div(id="txA")
+					input(type="submit" value="Ingresar" id="valingadm" class="botonstyle")
+		footer
+			article(id="automargen" class="footflex")
+				article(id="nave" class="column")
+					h3 Navegación
+					a(href="" class="selB") Inicio
+					a(href="conocenos") Conócenos
+					a(href="portafolio") Portafolio
+					a(href="blog") Blog
+					a(href="cliente") Clientes
+					a(href="contacto") Contacto
+				article(id="soci" class="column")
+					h3 Socializa
+					article(id="redesa")
+						a(href="https://www.facebook.com/Conaxport" target="_blank") #[span(class="icon-facebook2")]
+						a(href="https://www.facebook.com/Conaxport" target="_blank") #[span(class="icon-instagram")]
+						a(href="https://www.facebook.com/Conaxport" target="_blank") #[span(class="icon-twitter2")]
+						a(href="https://www.facebook.com/Conaxport" target="_blank") #[span(class="icon-google-plus-square")]
+				article(id="con" class="column")
+					h3 Contáctenos
+					div Teléfono: +57 -7  5947018 - 5 841733
+					div Móvil:  +57  316 617 5099
+					div + 57  316 834 1424
+					div Contacto@conaxport.com
+					div Av 11 # 16-14 b. Libertad
+					div Cúcuta - Colombia
+				article(id="conax" class="column")
+					h3 Conaxport
+					p
+						|Un mundo lleno de soluciones enfocado en las problemáticas empresariales; 
+						|prestando soluciones de  Mercadeo, plataformas web, páginas web, publicidad, 
+						|asesorías, capacitaciones y mercadeo internacional.
+		script(src="/js/nivo_slider.js")
+		script(src="/js/sliderimga.js")

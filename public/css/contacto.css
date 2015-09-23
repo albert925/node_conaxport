@@ -1,0 +1,78 @@
+#cjacot{
+	display: flex;
+	-webkit-justify-content: space-between;
+	-ms-justify-content: space-between;
+	justify-content: space-between;
+}
+#datcont,#txinpt{
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	width: 50%;
+}
+	#datcont h2{
+		color: #FF241E;
+	}
+	#datcont label{
+		font-size: 20px;
+	}
+	#txinpt h2{
+		color: #FFF72A;
+		font-size: 35px;
+		text-align: center;
+	}
+	#txinpt #ordecaja{
+		display: flex;
+		-webkit-justify-content: space-between;
+		-ms-justify-content: space-between;
+		justify-content: space-between;
+	}
+		#txinpt #ordecaja div{
+			display: flex;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
+		}
+			#txinpt #ordecaja div input{
+				margin: 0 0.2em 0.2em 0;
+			}
+			#txinpt #ordecaja div input:focus,#txinpt #ordecaja div textarea:focus{
+				background: #0097FE;
+				color: #fff;
+			}
+.btonbbstyl{
+	font-size: 25px;
+	padding: 0.25em 0;
+}
+.btonbbstyl:hover,.btonbbstyl:active{
+	background: #FFF72A;
+}
+::-webkit-input-placeholder { color: #0097FE;font-weight: bold; } /* WebKit */
+:-moz-placeholder { color: #0097FE;font-weight: bold; } /* Firefox 18- */
+::-moz-placeholder { color: #0097FE;font-weight: bold; } /* Firefox 19+ */
+:-ms-input-placeholder { color: #0097FE;font-weight: bold; } /* IE 10+ */
+@media screen and (max-width: 750px){
+	#cjacot{
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+	#datcont{
+		text-align: center;
+	}
+	#datcont,#txinpt{
+		margin: 0 auto;
+		width: 90%;
+	}
+}
+@media screen and (max-width: 500px){
+	#txinpt #ordecaja{
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+	.btonbbstyl{
+		margin: 0.5em 0;
+	}
+}

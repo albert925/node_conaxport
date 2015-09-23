@@ -1,0 +1,17 @@
+	.cajcont p{
+		text-align: justify;
+	}
+	.cajcont #aufec{
+		font-size: 14px;
+	}
+	.cajcont #dibtna{
+		margin: 1em 0;
+	}
+		.cajcont #dibtna a{
+			background: #7F7F7F;
+			color: #f7f7f7;
+			padding: 0.5em 1em;
+		}
+		.cajcont #dibtna a:hover{
+			background: #1698CE;
+		}

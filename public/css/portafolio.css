@@ -1,0 +1,48 @@
+#elip{
+	margin: 0 auto;
+	width: 73px;
+}
+	#elip img{
+		width: 100%;
+	}
+#flexport{
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-justify-content: space-between;
+	-ms-justify-content: space-between;
+	justify-content: space-between;
+}
+	#flexport figure{
+		font-size: 17px;
+		margin-top: 1em;
+		width: 30%;
+	}
+		#flexport figure figcaption{
+			font-size: 18px;
+		}
+.ama{
+	color: #FEFD00;
+}
+.azu{
+	color: #1698CE;
+}
+.gri{
+	color: #7F7F7F;
+}
+.roj{
+	color: #FF2A1E;
+}
+@media screen and (max-width: 750px){
+	#flexport figure{
+		width: 30%;
+	}
+}
+@media screen and (max-width: 550px){
+	#flexport figure{
+		border-bottom: 2px solid #C1C1C1;
+		margin: 1em auto;
+		width: 90%;
+	}
+}

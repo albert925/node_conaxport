@@ -1,0 +1,57 @@
+#flexcliet{
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-justify-content: space-between;
+	-ms-justify-content: space-between;
+	justify-content: space-between;
+}
+	#flexcliet figure{
+		margin-top: 1em;
+		width: 30%;
+	}
+		#flexcliet figure a{
+			color: #F7F7F7;
+		}
+	#flexcliet figcaption{
+		padding: 1em;
+		text-align: justify;
+	}
+		#flexcliet figcaption h3{
+			font-size: 24px;
+			text-align: center;
+		}
+		#flexcliet img{
+			border:2px solid #7F7F7F;
+			width: 99.2%;
+		}
+		#flexcliet figcaption p{
+			font-size: 18px;
+		}
+			#flexcliet figcaption a{
+				background: #575757;
+				padding: 0.5em 1em;
+			}
+			#flexcliet figcaption a:hover{
+				background: #3D3D3D;
+			}
+.kak{
+	background: #FAFF1E;
+	color: #000;
+}
+.fo{
+	background: #FF2C3C;
+}
+.fz{
+	background: #FF3C3C;
+}
+.fr{
+	background: #7F7F7F;
+}
+@media screen and (max-width: 550px){
+	#flexcliet figure{
+		margin: 1em auto;
+		width: 90%;
+	}
+}
