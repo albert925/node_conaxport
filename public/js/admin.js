@@ -19,26 +19,29 @@ function ingreadm () {
 		}
 		else{
 			$("#txA").css(normal).text("");
-			$.ajax({
-				url: '/conaxadm/adm',
-				type: 'POST',
-				data: JSON.stringify({a:adus,b:adps}),
-				cache: false,
-				contentType: "application/json",//false
-				processData: false,
-				beforeSend:function () {
-					$("#txA").prepend("<center><img src='/images/loadingb.gif' alt='loading' /></center>");
-				},
-				success:relsingadm,
-				error:function () {
-					$("#mesajimgavatar").css(normal).text("Ocurrión un error");
-					$("#mesajimgavatar").fadeIn();$("#mesajimgavatar").fadeOut(3000);
-				}
-			});
-			return false;
+			return true;
 		}
 	}
 }
 function relsingadm (data) {
 	console.log(data);
 }
+
+/*----ajax nodejs json-------------
+	$.ajax({
+		url: '/conaxadm/adm',
+		type: 'POST',
+		data: JSON.stringify({a:adus,b:adps}),
+		cache: false,
+		contentType: "application/json",//false
+		processData: false,
+		beforeSend:function () {
+			$("#txA").prepend("<center><img src='/images/loadingb.gif' alt='loading' /></center>");
+		},
+		success:relsingadm,
+		error:function () {
+			$("#mesajimgavatar").css(normal).text("Ocurrión un error");
+			$("#mesajimgavatar").fadeIn();$("#mesajimgavatar").fadeOut(3000);
+		}
+	});
+*/
