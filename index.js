@@ -1,5 +1,22 @@
 var express=require("express");
+var io=require("socket.io");
 var bodyParser=require("body-parser");
+var cookieParser=require("cookie-parser");
+var session=require("express-session");
+var app=express();
+
+app.set("view engine","jade");
+app.use(express.static("public"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(cookieParser());
+app.use(session({
+	secret:"misecreto",
+	resave:false,
+	saveUninitialized:true,
+	cookie:{secure:true}
+}));
+
 var mysql=require("mysql");
 var conexion=mysql.createConnection({
 	host:"localhost",
@@ -26,7 +43,7 @@ var regs="SELECT * from administrador order by id_adm asc";
 		console.log(result);
 	}
 });*/
-var query=conexion.query(regs,function (error,result) {
+/*var query=conexion.query(regs,function (error,result) {
 	if (error) {
 		throw error;
 	}
@@ -38,17 +55,16 @@ var query=conexion.query(regs,function (error,result) {
 			console.log("registro no encontrado");
 		}
 	}
-});
-var app=express();
+});*/
 
-app.set("view engine","jade");
-app.use(express.static("public"));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
 app.get("/",function (pet,res) {
 	res.render("index");
 });
 app.get("/conaxadm",function (pet,res) {
+	var guia="1";
+	var sess=pet.session;
+	sess.adm="usuario";
+	console.log("--"+sess.adm+"--");
 	res.render("conaxadm/index");
 });
 app.post("/conaxadm/adm",function (pet,res) {
