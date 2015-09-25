@@ -18,6 +18,23 @@ app.use(session({
 	saveUninitialized:true,
 	cookie:{secure:true}
 }));
+var mysql=require("mysql");
+var conexion=mysql.createConnection({
+	host:"localhost",
+	user:"root",
+	password:"",
+	database:"conaxport",
+	port:3306
+});
+conexion.connect(function (error) {
+	if (error) {
+		throw error;
+	}
+	else{
+		console.log("conexion correcta mysql.");
+	}
+});
+conexion.end();
 //var ssql="INSERT into administrador(nam_adm,cor_adm,pass_adm,tip_adm) values('nodejs','nodjs@dominio.com','node123','1')";
 /*var query=conexion.query(ssql,function (error,result) {
 	if (error) {
@@ -51,6 +68,12 @@ app.get("/conaxadm",function (pet,res) {
 	var sess=pet.session;//$_SESSION[''];
 	sess.adm="usuario";//$_SESSION['adm']="usuario"
 	res.render("conaxadm/index");
+});
+app.get("/conaxadm/adm",function (pet,res) {
+	res.render("conaxadm/admin");
+});
+app.get("/conaxadm/administrador",function (pet,res) {
+	res.render("conaxadm/admin");
 });
 app.listen(5001);
 console.log("Puerto 5001");

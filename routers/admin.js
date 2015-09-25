@@ -21,10 +21,27 @@ router.post("/conaxadm/adm",function (pet,res,next) {
 	var regs="SELECT * from administrador where nam_adm='"+usR+"' and pass_adm='"+psR+"'";
 	conexion.getConnection(function (error,conectT) {
 		conectT.query(regs,function (err,result) {
-			conectT.release();
-			console.log(result);
+			if (err) {
+				console.log(err);
+			}
+			else{
+				if (result.length>0) {
+					//res.render("conaxadm/indexb",{a:"Encontrado"});
+					var admin=[{idad:result[0].id_adm,nmad:result[0].nam_adm,crad:result[0].cor_adm,tpad:result[0].tip_adm}];
+					//res.render("conaxadm/admin",{ad:admin});
+					console.log(admin[0]);
+					var sess=pet.session;
+					sess.adm=result[0].id_adm;
+					sess.datadm={nmad:result[0].nam_adm,crad:result[0].cor_adm,tpad:result[0].tip_adm}
+					console.log(sess.adm);
+					console.log(sess.datadm);
+					res.render("conaxadm/admin",{ad:admin[0]});
+				}
+				else{
+					res.render("conaxadm/index",{a:"Usuario o contraseña incorrectos"});
+				}
+			}
 		});
 	});
-	res.render("conaxadm/index");
 });
 module.exports=router;
