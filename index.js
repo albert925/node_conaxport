@@ -3,9 +3,10 @@ var io=require("socket.io");
 var bodyParser=require("body-parser");
 var cookieParser=require("cookie-parser");
 var session=require("express-session");
-var admin=require("./routers/admin.js");
+var routers=require("./routers/admin.js");
+
 var app=express();
-console.log(admin);
+
 app.set("view engine","jade");
 app.use(express.static("public"));
 app.use(bodyParser.json());
@@ -17,26 +18,6 @@ app.use(session({
 	saveUninitialized:true,
 	cookie:{secure:true}
 }));
-
-var mysql=require("mysql");
-var conexion=mysql.createConnection({
-	host:"localhost",
-	user:"root",
-	password:"",
-	database:"conaxport",
-	port:3306
-});
-function conexioncorrecta () {
-	conexion.connect(function (error) {
-		if (error) {
-			throw error;
-		}
-		else{
-			console.log("conexion correcta mysql.");
-		}
-	});
-	conexion.end();
-}
 //var ssql="INSERT into administrador(nam_adm,cor_adm,pass_adm,tip_adm) values('nodejs','nodjs@dominio.com','node123','1')";
 /*var query=conexion.query(ssql,function (error,result) {
 	if (error) {
@@ -61,6 +42,7 @@ function conexioncorrecta () {
 		}
 	}
 });*/
+app.use("/",routers);
 app.get("/",function (pet,res) {
 	res.render("index");
 });
@@ -68,15 +50,6 @@ app.get("/conaxadm",function (pet,res) {
 	var guia="1";
 	var sess=pet.session;//$_SESSION[''];
 	sess.adm="usuario";//$_SESSION['adm']="usuario"
-	res.render("conaxadm/index");
-});
-app.post("/conaxadm/adm",function (pet,res) {
-	console.log(pet.body);
-	var usR=pet.body.usadm;
-	var psR=pet.body.pasadm;
-	var ftR=admin.login(usR,psR);
-	console.log("---"+ftR+"---");
-	//console.log(confiradmin(usR,psR));
 	res.render("conaxadm/index");
 });
 app.listen(5001);
