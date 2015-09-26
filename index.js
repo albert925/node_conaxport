@@ -3,7 +3,7 @@ var io=require("socket.io");
 var bodyParser=require("body-parser");
 var cookieParser=require("cookie-parser");
 var session=require("express-session");
-var routers=require("./routers/admin.js");
+var sessiones=require("./routers/admin.js");
 
 var app=express();
 
@@ -59,21 +59,16 @@ conexion.end();
 		}
 	}
 });*/
-app.use("/",routers);
 app.get("/",function (pet,res) {
 	res.render("index");
 });
 app.get("/conaxadm",function (pet,res) {
-	var guia="1";
-	var sess=pet.session;//$_SESSION[''];
-	sess.adm="usuario";//$_SESSION['adm']="usuario"
+	//var guia="1";
+	//var sess=pet.session;//$_SESSION[''];
+	//sess.adm="usuario";//$_SESSION['adm']="usuario"
 	res.render("conaxadm/index");
 });
-app.get("/conaxadm/adm",function (pet,res) {
-	res.render("conaxadm/admin");
-});
-app.get("/conaxadm/administrador",function (pet,res) {
-	res.render("conaxadm/admin");
-});
+app.post("/conaxadm",sessiones.validacion);
+app.get("/conaxadm/administrador",sessiones.bienvenida);
 app.listen(5001);
 console.log("Puerto 5001");
