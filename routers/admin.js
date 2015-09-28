@@ -1,8 +1,7 @@
-var bodyParser=require("body-parser");
-var cookieParser=require("cookie-parser");
+//var bodyParser=require("body-parser");
+//var cookieParser=require("cookie-parser");
 //var session=require("express-session");
 var mysql=require("mysql");
-
 var conexion=mysql.createPool({//conexion multiple
 	connectionLimit:100, //importante
 	host:"localhost",
@@ -40,7 +39,7 @@ exports.validacion=function (pet,res) {
 exports.bienvenida=function (pet,res) {
 	console.log(pet.session.adm);
 	if (pet.session.adm) {
-		res.render("conaxadm/admin",{ad:pet.session.adm});
+		res.render("conaxadm/admin",{ad:pet.session.adm,bd:pet.session.datadm});
 	}
 	else{
 		res.redirect("/conaxadm");

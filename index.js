@@ -35,30 +35,6 @@ conexion.connect(function (error) {
 	}
 });
 conexion.end();
-//var ssql="INSERT into administrador(nam_adm,cor_adm,pass_adm,tip_adm) values('nodejs','nodjs@dominio.com','node123','1')";
-/*var query=conexion.query(ssql,function (error,result) {
-	if (error) {
-		throw error;
-	}
-	else{
-		console.log(result);
-	}
-});*/
-/*var query=conexion.query(regs,function (error,result) {
-	if (error) {
-		throw error;
-	}
-	else{
-		if (result.length>0) {
-			//console.log(result[1].nam_adm+"-"+result[1].cor_adm+"-"+result[1].pass_adm);
-			var totrs="si";
-		}
-		else{
-			//console.log("registro no encontrado");
-			var totrs="no";
-		}
-	}
-});*/
 app.get("/",function (pet,res) {
 	res.render("index");
 });
