@@ -8,7 +8,7 @@ function inicio_chat () {
   });
 }
 function enviarmensaje () {
-	socket.emit("chat message",$("#m").val());
+	socket.emit("chat mensaje",$("#m").val());
 	$("#m").val("");
 	return false;
 }

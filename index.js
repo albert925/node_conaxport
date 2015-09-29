@@ -52,9 +52,7 @@ app.get("/chat",function (pet,res) {
 	res.render("chat");
 });
 io.on("connection",function (socket) {
-	console.log("mensaje");
-	socket.emit("news",{hola:"mundo"});
-	socket.on("mensaje de envento",function (data) {
+	socket.on("chat mensaje",function (data) {
 		console.log(data);
 	});
 });
