@@ -1,10 +1,11 @@
 $(document).on("ready",inicio_chat);
-var socket = io('http://localhost:5001/chat');
+var socket = io.connect("http://localhost:5001");
 function inicio_chat () {
-	/*socket.on('connect', function(){});
-  socket.on('event', function(data){});
-  socket.on('disconnect', function(){});*/
   $("form").submit(enviarmensaje);
+  socket.on("news",function (data) {
+  	console.log(data);
+  	socket.emit("Mensaje de evento",{my:"datos"});
+  });
 }
 function enviarmensaje () {
 	socket.emit("chat message",$("#m").val());

@@ -1,4 +1,4 @@
-var express=require("express");
+var express=require("express"),http=require("http");
 var bodyParser=require("body-parser");
 var cookieParser=require("cookie-parser");
 var session=require("express-session");
@@ -6,8 +6,8 @@ var sessiones=require("./routers/admin.js");
 
 var app=express();
 
-var servidor=require("http").Server(app);
-var io=require("socket.io")(servidor);
+var servidor=http.createServer(app);
+var io=require("socket.io").listen(servidor);
 
 app.set("view engine","jade");
 app.use(express.static("public"));
@@ -53,6 +53,10 @@ app.get("/chat",function (pet,res) {
 });
 io.on("connection",function (socket) {
 	console.log("mensaje");
+	socket.emit("news",{hola:"mundo"});
+	socket.on("mensaje de envento",function (data) {
+		console.log(data);
+	});
 });
-app.listen(5001);
+servidor.listen(5001);
 console.log("Puerto 5001");
