@@ -1,0 +1,27 @@
+form {
+	bottom: 0;
+	display: flex;
+	padding: 3px;
+	width: 100%;
+}
+form input{
+	border: 0;
+	padding: 10px;
+	width: 90%;
+	margin-right: .5%;
+}
+form button{
+	background: #3683C2;
+	border: none;
+	padding: 10px;
+	width: 9%;
+}
+form button:hover,form button:active{
+	background: #834D9F;
+}
+#messages{list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+#messages li {padding: 5px 10px;}
+#messages li:nth-child(odd) {background: #eee;}

@@ -1,11 +1,13 @@
 var express=require("express");
-var io=require("socket.io");
 var bodyParser=require("body-parser");
 var cookieParser=require("cookie-parser");
 var session=require("express-session");
 var sessiones=require("./routers/admin.js");
 
 var app=express();
+
+var servidor=require("http").Server(app);
+var io=require("socket.io")(servidor);
 
 app.set("view engine","jade");
 app.use(express.static("public"));
@@ -46,5 +48,11 @@ app.get("/conaxadm",function (pet,res) {
 });
 app.post("/conaxadm",sessiones.validacion);
 app.get("/conaxadm/administrador",sessiones.bienvenida);
+app.get("/chat",function (pet,res) {
+	res.render("chat");
+});
+io.on("connection",function (socket) {
+	console.log("mensaje");
+});
 app.listen(5001);
 console.log("Puerto 5001");
