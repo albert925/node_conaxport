@@ -1,10 +1,16 @@
 $(document).on("ready",inicio_chat);
-var socket = io.connect("http://localhost:5001");
+var socket = io.connect();//conexion multile sin dominio unico con 192.168.1.112:5001 local localhost:5001
+function codigohtml (dato) {
+	var html="<article>";
+		html="<div>"+dato+"</div>";
+	html+="</article>";
+	return html;
+}
 function inicio_chat () {
   $("form").submit(enviarmensaje);
-  socket.on("news",function (data) {
+  socket.on("chat mensaje",function (data) {
   	console.log(data);
-  	socket.emit("Mensaje de evento",{my:"datos"});
+  	$("#mensajes").prepend(codigohtml(data));
   });
 }
 function enviarmensaje () {

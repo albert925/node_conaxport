@@ -37,6 +37,12 @@ conexion.connect(function (error) {
 	}
 });
 conexion.end();
+app.use(function (pet,res,next) {
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+	res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
 app.get("/",function (pet,res) {
 	res.render("index");
 });
@@ -53,7 +59,8 @@ app.get("/chat",function (pet,res) {
 });
 io.on("connection",function (socket) {
 	socket.on("chat mensaje",function (data) {
-		console.log(data);
+		//console.log(data);
+		io.emit("chat mensaje",data);
 	});
 });
 servidor.listen(5001);
