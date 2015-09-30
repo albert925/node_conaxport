@@ -54,8 +54,19 @@ app.get("/conaxadm",function (pet,res) {
 });
 app.post("/conaxadm",sessiones.validacion);
 app.get("/conaxadm/administrador",sessiones.bienvenida);
+app.post("/",function (pet,res) {
+	var uscht=pet.body.usch;
+	pet.session.users=uscht;
+	res.redirect("/chat");
+});
 app.get("/chat",function (pet,res) {
-	res.render("chat");
+	console.log(pet.session.users);
+	if (pet.session.users) {
+		res.render("chat");
+	}
+	else{
+		res.redirect("/");
+	}
 });
 io.on("connection",function (socket) {
 	socket.on("chat mensaje",function (data) {

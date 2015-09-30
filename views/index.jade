@@ -11,29 +11,15 @@ html
 		link(rel="stylesheet" href="/css/normalize.css")
 		link(rel="stylesheet" href="/css/iconos/style.css")
 		link(rel="stylesheet" href="/css/style.css")
-		link(rel="stylesheet" href="/css/default/default.css")
-		link(rel="stylesheet" href="/css/nivo_slider.css")
+		link(rel="stylesheet" href="/css/chat.css")
 		script(src="/js/jquery_2_1_1.js")
 		script(src="/js/scrpag.js")
 	body
-		aside(id="redesb")
-			a(href="https://www.facebook.com/Conaxport" target="_blank") #[span(class="icon-facebook2")]
-			a(href="https://www.facebook.com/Conaxport" target="_blank") #[span(class="icon-instagram")]
-			a(href="https://www.facebook.com/Conaxport" target="_blank") #[span(class="icon-twitter2")]
-			a(href="https://www.facebook.com/Conaxport" target="_blank") #[span(class="icon-google-plus-square")]
-		aside(id="vtnemerg")
-			a( href="brochure" target="_blank") Ver portafolio
 		header
 			figure(id="logo")
 				a(href="/")
 					img(src="/images/logo.png" alt="logo")
 			nav(id="mnP")
-				a(href="/" class="selA") INICIO
-				a(href="/conocenos") CONÓCENOS
-				a(href="/portafolio") PORTAFOLIO
-				a(href="/blog") BLOG
-				a(href="/cliente") CLIENTES
-				a(href="/contacto") CONTACTO
 		aside(id="botnmov")
 		nav(id="mnB")
 			a(href="/" class="selA") INICIO
@@ -43,47 +29,13 @@ html
 			a(href="/cliente") CLIENTES
 			a(href="/contacto") CONTACTO
 			a(href="/brochure" target="_blank") VER PORTAFOLIO
-		figure(id="galery")
-			div(class="slider-wrapper theme-default")
-				div(id="slider" class="nivoSlider")
-					img(src="" alt="imagen")
 		section
-			article(id="automargen")
-				article(id="patc")
-					article(id="pa")
-						h2 Tienes una idea para tu empresa...
-					article(id="pb")
-						h4 Nosotros te ayudamos que se hag
-						h2 REALIDAD
-				article(id="msj")
-					h2
-						span(id="whit") CONAXPORT : "
-						span No Somos una empresa más, somos la solución  que buscabas para tu negocio
-						span(id="whit") "
-				article(id="soms" class="flexa")
-					article(id="blue")
-						h2
-						h2(id="D")
-						p 
-							|Prestamos servicios en diseños 100% personalizados en:  páginas web, 
-							|plataformas web, diseños publicitarios, diseños de imagen corporativa, 
-							|diseño de estrategias, diseño de material PoP y material corporativo.
-					article(id="red")
-						h2
-						h2(id="D")
-						p
-							|Prestamos servicios en diseños 100% personalizados en:  páginas web, 
-							|plataformas web, diseños publicitarios, diseños de imagen corporativa, 
-							|diseño de estrategias, diseño de material PoP y material corporativo.
-					article(id="yellow")
-						h2
-						h2(id="D")
-						p
-							|Prestamos servicios en diseños 100% personalizados en:  páginas web, 
-							|plataformas web, diseños publicitarios, diseños de imagen corporativa, 
-							|diseño de estrategias, diseño de material PoP y material corporativo.
-				h2(id="roj") Nuevos proyectos
-				article(id="proye" class="flexa")
+			h1 Iniciar chat
+			article#automargen
+				form(action="/" method="post")
+					input(type="text" name="usch" required placeholder="Nombre de Usuario")
+					div(id="txch")
+					input(type="submit" value="Ingresar" id="ingcht" class="botonstyle")
 		footer
 			article(id="automargen" class="footflex")
 				article(id="nave" class="column")
