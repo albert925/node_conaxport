@@ -1,0 +1,3 @@
+exports.valchat=passport.authenticate,function (pet,res) {
+	// body...
+};

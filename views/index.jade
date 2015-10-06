@@ -33,9 +33,21 @@ html
 			h1 Iniciar chat
 			article#automargen
 				form(action="/" method="post")
-					input(type="text" name="usch" required placeholder="Nombre de Usuario")
+					input(type="text" id="usch" name="usch" required placeholder="Nombre de Usuario")
 					div(id="txch")
 					input(type="submit" value="Ingresar" id="ingcht" class="botonstyle")
+			article#facebook
+				if(user)
+					ul
+						li
+							img(src="#{uer.photo}")
+						li Bienvenido #{user.name}
+						li
+							a(href="logout") Salir
+				else
+					ul
+						li
+							a(href="/auth/facebook") Login con facebook
 		footer
 			article(id="automargen" class="footflex")
 				article(id="nave" class="column")
